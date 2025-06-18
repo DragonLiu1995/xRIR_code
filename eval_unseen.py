@@ -424,27 +424,17 @@ if __name__ == "__main__":
             print("GT T60: {}s, Pred T60: {}s, T60 Percentage Error: {}\%".format(gt_t60, pred_t60, np.abs(gt_t60 - pred_t60) / gt_t60 * 100.))
             t60_error_list.append(np.abs(gt_t60 - pred_t60) / gt_t60 * 100.)
 
-            # print(tgt_spec.max(), tgt_spec.min(), out_spec.max(), out_spec.min())
             mag_loss = evaluator.stft_loss(out_spec.squeeze(-1).cpu().numpy(), torch.log(tgt_spec + 1e-8).squeeze(1).cpu().numpy())
             print("STFT loss: ".format(mag_loss))
             mag_loss_list.append(mag_loss)
             print("HHH", cnt)
-
-
-            min_len = min(out_wav.shape[-1], tgt_wav.shape[-1])
-            env_loss = evaluator.env_loss(out_wav[0, 0, :min_len].cpu().numpy(), tgt_wav[0, 0, :min_len].cpu().numpy())
-            env_loss_list.append(env_loss)
-            print("ENV loss: {}".format(env_loss))
-
 
             cnt += 1
             print("Average EDT error: ", np.mean(edt_error_list))
             print("Average C50 error: ", np.mean(c50_error_list))
             print("Average T60 error: ", np.mean(t60_error_list))
             print("----------{}----------".format(cnt))
-            # if np.mean(c50_error_list) == np.inf:
-            #     print(c50_error_list[-3:])
-            #     exit(0)
+
         print("Average EDT error: ", np.mean(edt_error_list))
         print("Average C50 error: ", np.mean(c50_error_list))
         print("Average T60 error: ", np.mean(t60_error_list))

@@ -1,5 +1,4 @@
 import sys
-sys.path.append("/pscratch/sd/x/xiuliu/room_rir/xRIR_3rd_party_impl/")
 from torch.utils.data import Dataset
 import torchaudio
 import numpy as np
