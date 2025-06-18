@@ -73,7 +73,7 @@ python eval_seen.py
 for seen test split.
 
 ### 🌎 Pretrained model 
-Download our pretrained model checkpoints from [here]
+Download our pretrained model checkpoints from [here](https://drive.google.com/file/d/12uL5u15gtRtiaLfCjPIN4nEDOVl4tdKi/view?usp=drive_link)
 
 ## 📧 Contact
 
