@@ -149,9 +149,8 @@ class basic_project2(nn.Module):
 
 
 class xRIR(nn.Module):
-    def __init__(self, condition_dim, num_channels, n_bins=310, dim=512, intermediate_ch=256, input_dim=1, latent_dim=512,
-       all_block=6, image_size = (256, 512), patch_size = (16, 32), depth=12, mlp_dim=512, heads=8, time_input_ch=(13 * 2 + 1) * 7
-    ):
+    def __init__(self, num_channels, n_bins=310, dim=512, intermediate_ch=256,
+                  image_size = (256, 512), patch_size = (16, 32), depth=12, mlp_dim=512, heads=8):
         super(xRIR, self).__init__()
         self.num_channels = num_channels
         self.t_bins = n_bins

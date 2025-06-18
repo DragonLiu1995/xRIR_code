@@ -1,12 +1,9 @@
 import sys
 import numpy as np
-
-import numpy as np
 import os
 
 from scipy import stats
 import matplotlib.pyplot as plt
-import scipy.interpolate
 from scipy.interpolate import interp1d
 import torchaudio
 from scipy.signal import hilbert
@@ -379,7 +376,7 @@ if __name__ == "__main__":
     test_loader = DataLoader(test_dataset, shuffle=True, batch_size=1)
 
 
-    model = xRIR(condition_dim=6, num_channels=8, input_dim=1, latent_dim=256)
+    model = xRIR(num_channels=8)
     model.load_state_dict(torch.load("./checkpoints/xRIR_unseen.pth", map_location="cpu"))
     model.cuda()
 
