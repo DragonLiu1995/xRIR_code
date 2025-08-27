@@ -77,7 +77,7 @@ for seen test split.
 Download our pretrained model checkpoints from [here](https://drive.google.com/file/d/12uL5u15gtRtiaLfCjPIN4nEDOVl4tdKi/view?usp=drive_link)
 
 ### Sim to Real
-Check sim_to_real folder for more info. Basically sim to real transfer features two stages finetuning to achieve the most optimal results: 1. finetune on training split of 3 different rooms (12 * 3 as illustrated in this code, dampened room excluded), and then in second stage, we tune specifically on targeted room only (using only 12 samples in that room based on stage 1 checkpoint). For reference RIR, we preprocessed all RIRs in a room by dividing the waveform by training set's largest magnitude (12 samples in that room).
+Check sim_to_real folder for more info. Basically sim to real transfer features two stages finetuning to achieve the most optimal results: 1. finetune on training split of 3 different rooms (12 * 3 as illustrated in this code, dampened room excluded), and then in second stage, we tune specifically on targeted room only (using only 12 samples in that room based on stage 1 checkpoint). For reference RIR, we preprocessed all RIRs in a room by dividing the waveform by training set's largest magnitude (12 samples in that room). We provide the rendered source depth map at the source in each room under `sim_to_real/depth_map`. For all other inputs including raw RIRs, xyz locations, you can obtain from original HearingAnythingAnywhere dataset.
 
 ## 📧 Contact
 
