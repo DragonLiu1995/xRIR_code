@@ -66,7 +66,7 @@ if __name__ == "__main__":
     #     print(torch.cuda.current_device())
     from treble_multi_room_dataset.treble_xRIR_dataset import xRIR_Dataset
     from torch.utils.data import DataLoader
-    from model.few_shot_ir_interpolation_4 import xRIR
+    from model.xRIR import xRIR
     from utils.lr_scheduler import ExponentialLR
     import torch.optim as optim
     lr = 1e-3
