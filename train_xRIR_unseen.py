@@ -78,10 +78,10 @@ if __name__ == "__main__":
 
 
     num_epoch = 200
-    train_dataset = xRIR_Dataset(split="train", max_len=9600, num_shot=8)
+    train_dataset = xRIR_Dataset(split="train", max_len=9600, num_shot=num_shot)
     train_loader = DataLoader(train_dataset, shuffle=True, batch_size=batch_size)
 
-    test_dataset = xRIR_Dataset(split="test",  max_len=9600, num_shot=8)
+    test_dataset = xRIR_Dataset(split="test",  max_len=9600, num_shot=num_shot)
     test_loader = DataLoader(test_dataset, shuffle=True, batch_size=batch_size)
 
 
